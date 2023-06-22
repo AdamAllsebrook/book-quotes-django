@@ -1,1 +1,14 @@
-<p>new quote form</p>
+<form class="space-y-5 flex flex-col border-y-2 p-4" hx-post="{% url 'add_quote' %}" hx-target="#quotes-feed" hx-swap="afterbegin" method="POST">
+    {% csrf_token %}
+    <div class="flex flex-col">
+        <label for="book">Book</label>
+        <input type="text" name="book" placeholder="Book">
+    </div>
+    <div class="flex flex-col">
+        <label for="text">Quote</label>
+        <input type="text" name="text" placeholder="Quote">
+    </div>
+    <!-- {{ form }} -->
+    <button type="submit">Publish Quote</button>
+</form>
+
