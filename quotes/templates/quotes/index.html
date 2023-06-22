@@ -1,1 +1,24 @@
-<h1>Hello, world!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <!-- <script src="https://unpkg.com/htmx.org@1.9.2" integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h" crossorigin="anonymous"></script> -->
+</head>
+<body class="flex" style="font-family: 'Merriweather', serif;">
+    <main class="max-w-[70ch] min-w-full lg:min-w-[70ch] mx-auto flex flex-col border-x-2">
+        <h1 class="text-2xl mx-auto py-4">Book Quotes</h1>
+        {% include 'quotes/_new_quote.html' %}
+        <div id="quotes-feed" class="p-4">
+            {% for quote in quotes %}
+                {% include 'quotes/_quote.html' with quote=quote %}
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>  
+
