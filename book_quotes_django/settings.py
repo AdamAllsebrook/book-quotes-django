@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_htmx',
     'tailwind',
     'theme',
+    'authentication',
     'django_browser_reload',
     'django.contrib.admin',
     'django.contrib.auth',
