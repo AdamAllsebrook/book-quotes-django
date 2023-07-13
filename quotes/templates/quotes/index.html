@@ -4,7 +4,11 @@
     <main class="max-w-[70ch] min-w-full lg:min-w-[70ch] mx-auto flex flex-col border-x-2">
         <div class="flex flex-row justify-between p-4">
             <h1 class="text-2xl my-auto">Book Quotes</h1>
-            <a class="my-auto" href="{% url 'login' %}">Sign in</a>
+            {% if user.is_authenticated %}
+                <a class="my-auto" href="{% url 'logout' %}">Sign out</a>
+            {% else %}
+                <a class="my-auto" href="{% url 'login' %}">Sign in</a>
+            {% endif %}
         </div>
         {% include 'quotes/_new_quote.html' %}
         <div id="quotes-feed" class="p-4">
